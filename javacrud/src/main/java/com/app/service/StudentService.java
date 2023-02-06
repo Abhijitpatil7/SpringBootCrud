@@ -32,7 +32,8 @@ public class StudentService implements StudentInter {
 
 	@Override
 	public String deleteDetails(Long Id) {
-	
+		
+		stud.deleteById(Id);
 		return null;
 	}
 	//dep : dao layer i/f

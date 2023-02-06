@@ -12,5 +12,7 @@ public interface StudentInter {
 
 	Student addStud(Student stud);
 
+	
+
 	String deleteDetails(Long Id);
 }

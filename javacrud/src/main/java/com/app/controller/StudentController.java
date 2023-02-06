@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,12 +24,20 @@ public class StudentController {
 	}
 
 	// add REST end point to return list of students
-	@GetMapping
+	@GetMapping("/details")
 	public List<Student> getAllStudents()
 	{
 		List<Student> students=s.getAll();
 		System.out.println(""+students);
 		return students;
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String delete(@PathVariable Long id) {
+		System.out.println(id);
+		s.deleteDetails(id);
+		return "deleted successfully";
+		
 	}
 }
 

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	private String firstname;
 	
 	private String lastname;
@@ -27,7 +27,7 @@ public class Student {
 		super();
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
